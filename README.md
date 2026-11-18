@@ -1,16 +1,16 @@
-# Claude Skills Web Definitiva
+# UI Zkyll
 
-Paquete de 71 skills para Claude Code: diseño web, UI/UX, animación, front-end y mejoras de Claude (ponytail, caveman, grill-me, playwright, ui-ux-pro-max, impeccable, taste, etc.).
+Paquete de 72 skills para Claude Code, con `ui-zkyll` al frente (360 diseños de referencia para crear y mejorar webs): diseño web, UI/UX, animación, front-end y mejoras de Claude (ponytail, caveman, grill-me, playwright, ui-ux-pro-max, impeccable, taste, etc.).
 
 ## Instalación (dile esto a tu Claude)
 
-> Instala las skills de https://github.com/yokyznt/claude-skills-web-definitiva en mi ~/.claude/skills
+> Instala las skills de https://github.com/yokyznt/ui-zkyll en mi ~/.claude/skills
 
 O a mano:
 
 ```bash
-git clone https://github.com/yokyznt/claude-skills-web-definitiva
-cd claude-skills-web-definitiva
+git clone https://github.com/yokyznt/ui-zkyll
+cd ui-zkyll
 ./install.sh            # macOS / Linux / Git Bash
 ```
 
@@ -19,6 +19,18 @@ powershell -ExecutionPolicy Bypass -File install.ps1   # Windows
 ```
 
 Copia cada carpeta de `skills/` a `~/.claude/skills/` (no borra las que ya tengas; sobrescribe las del mismo nombre). Reinicia Claude Code.
+
+## ui-zkyll (la skill principal)
+
+Biblioteca de 360 diseños animados (HTML/CSS/JS) en 15 categorías: navegación, texto, interruptores, cargas, cursor, fondos, scroll, galerías, transiciones, íconos, 3D, generativo, imagen y video, diagramas y portadas. Al crear o mejorar una web, Claude busca referencia en `skills/ui-zkyll/catalogo/`, la adapta al proyecto y encadena las demás skills del paquete (dirección visual, movimiento, revisión, accesibilidad, rendimiento).
+
+El código de los diseños es de Moxen (moxen.cl/recursos) y su licencia prohíbe redistribuirlo, así que el repo trae solo el catálogo y el script que lo descarga:
+
+```bash
+python skills/ui-zkyll/scripts/descargar.py          # todo, a D:\moxenecursos (o $ZKYLL_RECURSOS)
+python skills/ui-zkyll/scripts/descargar.py texto cursor
+python skills/ui-zkyll/scripts/buscar.py lupa
+```
 
 ## Mejoras de Claude
 
