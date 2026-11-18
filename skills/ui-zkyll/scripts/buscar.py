@@ -1,7 +1,8 @@
 import os, re, sys
 
 BASE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "catalogo")
-RECURSOS = os.environ.get("ZKYLL_RECURSOS", r"D:\moxen\recursos")
+LOCAL = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "recursos")
+RECURSOS = os.environ.get("ZKYLL_RECURSOS") or (LOCAL if os.path.isdir(LOCAL) else "D:/moxen/recursos")
 
 
 def main():

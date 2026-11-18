@@ -2,7 +2,7 @@ import io, json, os, re, sys, time, urllib.parse, urllib.request, zipfile
 
 API = "https://moxen.cl/api/descarga.php"
 CODIGO = "REGALO_MOXEN"
-DESTINO = os.environ.get("ZKYLL_RECURSOS", r"D:\moxen\recursos")
+DESTINO = os.environ.get("ZKYLL_RECURSOS") or os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "recursos")
 CATEGORIAS = {
     "navegacion", "texto", "interruptores", "cargas", "cursor", "fondos", "scroll",
     "galerias", "transiciones", "iconos", "tresd", "generativo", "media",
