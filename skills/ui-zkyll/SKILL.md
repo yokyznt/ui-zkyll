@@ -9,10 +9,16 @@ Biblioteca de 360 diseños animados de referencia (HTML/CSS/JS sin framework) + 
 
 ## Dónde está el código
 
-`$ZKYLL_RECURSOS` (por defecto `D:\moxen\recursos`), una carpeta por diseño:
-`<recursos>/<categoría>/<slug>/moxen-<slug>/` con `index.html` (demo), `<slug>.css`, `<slug>.js`, `README.md` (qué trae, variables CSS, cómo usarlo).
+Los 360 diseños vienen dentro de la skill, en `recursos/<categoría>/<slug>/moxen-<slug>/` (`index.html` demo, `<slug>.css`, `<slug>.js`, `README.md`). Se resuelve en este orden: `$ZKYLL_RECURSOS`, `recursos/` junto a esta skill, `D:\moxenecursos`. Si no existe ninguna: `python scripts/descargar.py` (cupón público de Moxen; acepta categorías como argumentos).
 
-Si la carpeta no existe: `python scripts/descargar.py` (baja las 15 categorías con el cupón público de Moxen; se puede pasar categorías como argumentos).
+## Libertad creativa (modo por defecto)
+
+El usuario no va a nombrar los diseños: elige tú. Para cada página nueva o rediseño:
+1. Decide un concepto visual y una sola idea de movimiento que lo sostenga.
+2. Escoge los diseños que lo sirvan en cada sección (portada, navegación, texto, fondo, scroll, galería, cursor, transiciones, cargas, íconos, 3D, generativo, imagen y video, diagramas, interruptores). Mezcla categorías, combina dos diseños en una sección si suma, y deja secciones quietas para dar aire.
+3. Instálalos en el proyecto de una vez: `python scripts/usar.py <carpeta_del_proyecto> slug1 slug2 ...` copia cada uno a `<proyecto>/zkyll/<slug>/` (sin licencia), imprime sus `<link>`/`<script>` y deja `demo-main.html` con el marcado de la demo.
+4. Integra: pega el marcado en la página, enlaza css/js, reemplaza textos, fotos y variables CSS por los del concepto, unifica tipografía y color entre diseños. No dejes un collage: todo debe verse de la misma mano.
+5. Cuenta en el reporte final qué diseños usaste y dónde, en una línea cada uno.
 
 ## Flujo
 
@@ -38,7 +44,7 @@ Si la carpeta no existe: `python scripts/descargar.py` (baja las 15 categorías 
 | hero, carátulas, portadas, intros | `portadas` |
 
 3. Buscar: `python scripts/buscar.py <palabra> [palabra]` (busca en nombre, frase y dependencias) o leer `catalogo/<categoría>.md`. Elegir 1–3 candidatos, no más: coherencia antes que cantidad.
-4. Leer el `README.md`, el `.css` y el `.js` de cada candidato elegido (solo esos). Abrir `index.html` en el navegador si hay duda de cómo se ve.
+4. Leer el `README.md`, el `.css` y el `.js` de cada candidato elegido (solo esos), o instalarlo con `usar.py` y leerlo ya copiado. Abrir `index.html` en el navegador si hay duda de cómo se ve.
 5. Adaptar, no pegar:
    - Reemplazar colores, tipografías y medidas por los tokens del proyecto (los diseños declaran variables CSS al inicio).
    - Renombrar clases al esquema del proyecto; quitar lo que no se use; cambiar el texto de demostración y las fotos de `img/` (son de muestra).
@@ -70,4 +76,4 @@ Si la carpeta no existe: `python scripts/descargar.py` (baja las 15 categorías 
 
 ## Licencia de los diseños
 
-Se pueden usar y modificar en proyectos propios y de clientes, incluso vendidos como producto terminado. No se pueden redistribuir como biblioteca, plantilla o recurso, ni publicar en otro repositorio. Por eso este paquete solo incluye el catálogo y el script de descarga, no el código de los diseños. Las fotos de demostración son de Unsplash; reemplazarlas.
+Se pueden usar y modificar en proyectos propios y de clientes, incluso vendidos como producto terminado. No se pueden redistribuir como biblioteca, plantilla o recurso, ni publicar en otro repositorio. En GitHub solo van el catálogo y los scripts (el código de `recursos/` está en .gitignore); en la PC del usuario `recursos/` sí está instalado. Al entregar un proyecto, el código copiado con `usar.py` forma parte del producto terminado, lo cual la licencia permite. Las fotos de demostración son de Unsplash; reemplazarlas.
